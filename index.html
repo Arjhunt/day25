@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to cart</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h1>Shopzee</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9" id="box">
+
+
+
+            </div>
+            <div class="col-md-3">
+                <div id="head">MY CART</div>
+                <div id="addtocart"></div>
+                <div id="total">TOTAL :</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        var products = ["Calculator", "Clock", "Coffee cup", "Crayons", "Hand mirror", "Makeup brush", "pen", "White notepad", "Wine glasses"]
+        var images = ["calculator.jpg", "clock.jpg", "coffee cup.jpg", "crayons.jpg", "hand mirror.jpg", "makeup brush.jpg", "pen.jpg", "white notepad.jpg", "wine glasses.jpg"]
+        var prices = [500, 1500, 200, 50, 600, 300, 70, 40, 300]
+        var Total = 0;
+        var count = 0;
+        for (i = 0; i < 9; i++) {
+
+            var card = document.createElement("div")
+            card.setAttribute("class", "card")
+            box.appendChild(card)
+            
+            // image div
+            var image = document.createElement("img")
+            image.setAttribute("src", images[i])
+            image.setAttribute("width", "299px")
+            image.setAttribute("height", "250px")
+            image.setAttribute("id", "image1")
+            card.appendChild(image)
+
+            // product name div
+            var prodbox = document.createElement("div")
+            prodbox.setAttribute("class", "prod")
+            prodbox.innerText = (products[i])
+            card.appendChild(prodbox)
+
+            //pice div
+            var price = document.createElement("div")
+            price.innerText = "₹ " + prices[i]
+            price.setAttribute("id", "price")
+            card.appendChild(price)
+
+
+            //button add to cart and function
+
+            var button = document.createElement("button")
+            button.setAttribute("class", "btn btn-dark")
+            button.setAttribute("id", i)
+            button.innerText = ("Add to Cart")
+            card.appendChild(button)
+            button.addEventListener("click", function () {
+                this.disabled = "true";
+
+
+                var cart = document.createElement("div")
+                cart.innerText = products[this.id] + " " + "-" + prices[this.id]
+                cart.setAttribute("class", "cart")
+                cart.setAttribute("id", prices[this.id])
+                count = count + prices[this.id]
+                addtocart.appendChild(cart)
+
+                var final = document.createElement("button")
+                final.innerText = "X"
+                final.setAttribute("class", "finals")
+                final.setAttribute("id", this.id)
+                cart.appendChild(final)
+
+                final.addEventListener("click", () => {
+
+                    document.getElementById(this.id).disabled = false
+                    cart.style.display = "none"
+                    document.getElementById("total").innerHTML = "TOTAL: "+(count = count - prices[this.id]);
+
+                })
+
+                document.getElementById("total").innerHTML ="TOTAL: " + count;
+
+            })
+
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

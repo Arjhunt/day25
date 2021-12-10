@@ -1,0 +1,100 @@
+body{
+    background-color: rgb(108, 121, 123);
+}
+.col-12{
+    background-image: linear-gradient(to right,rgb(100,70,80),yellow);
+   font-size: 40px;
+   text-align: center;
+   height: 100px;
+}
+#box{  
+  
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    flex-direction: row;
+} 
+
+.col-md-3{
+    background-color: orange;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    text-align: center;
+    height: 600px;
+    background-color:  rgb(236, 238, 237);
+    margin-top: 5px;
+}
+
+.card{
+    height: 420px;
+        width: 300px;
+        background-color: white;
+        margin-left: 15px;
+        margin-top: 15px;
+        border-radius: 20px;
+}
+
+#image1{
+    margin-top: 20px;
+}
+
+.prod
+{
+    width: 300px;
+    height: 60px;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blueviolet;
+
+}
+
+#price{
+    margin-top: 0;
+    font-weight: bold;
+    color: red;
+    background-image: linear-gradient(to right, yellow, brown);
+
+}
+
+.btn{
+    margin-left: 150px;
+    width: 145px;
+    height: 70px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.cart{
+    width: 300px;
+    background-color: chartreuse;
+    font-size: 25px;
+    border: 1px dashed rebeccapurple;
+    margin-bottom: 3px;
+}
+
+
+#total, #head{
+    background-image: linear-gradient(to top, yellow, red);
+    height: 50px;
+    color:blue;
+
+    font-size: 20px;
+    font-weight: bolder;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.finals{
+    background-color: tomato;
+    color: yellow;
+    border-radius: 10px;
+    height:40px;
+    margin: 10px;
+}
+#addtocart{
+    background-color: white;
+    height: 500px;
+    border-color: black;
+}
+
